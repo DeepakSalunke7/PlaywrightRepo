@@ -14,7 +14,7 @@ const config= defineConfig({
   reporter: 'html',
   use: {
     browserName: 'webkit', //set default browser to WebKit
-    headless: false, //run tests in headless mode
+    headless: false, //run tests in headless mode now
   },
 });
 
