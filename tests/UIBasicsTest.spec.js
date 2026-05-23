@@ -51,7 +51,7 @@ test('Page fixture playwright test', async ({page}) =>
 
 });
 
-test.only ('UI dropdown and radio button', async ({page}) =>
+test ('UI dropdown and radio button', async ({page}) =>
 {
 await page.goto("https://rahulshettyacademy.com/loginpagePractise/");
 await page.locator("input#username").fill("rahulshettyacademy");
