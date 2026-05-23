@@ -56,14 +56,15 @@ test.only ('UI dropdown and radio button', async ({page}) =>
 await page.goto("https://rahulshettyacademy.com/loginpagePractise/");
 await page.locator("input#username").fill("rahulshettyacademy");
 await page.locator("[name='password']").fill("Learning@830$3mK2");
-await page.locator("span.checkmark").last().click();//radio button handle
-await page.locator("[id='okayBtn']").click();//webbased popup handle
+// click the actual radio input (not the span) so the value becomes checked
+await page.locator("input[type='radio']").last().click(); // radio button handle
+await page.locator("[id='okayBtn']").click(); // webbased popup handle
 
-await expect(page.locator("span.checkmark").last()).toBeChecked();
+await expect(page.locator("input[type='radio']").last()).toBeChecked();
 
 await page.locator("select.form-control").selectOption("consult");//select element from drop down
 await page.locator("input#terms").click();
-await expect(page.locator("input#terms").click()).toBeTruthy();
+await expect(page.locator("input#terms")).toBeChecked();
 
 //await page.pause();
 
